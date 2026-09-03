@@ -1,0 +1,29 @@
+{
+  "name": "yellow-metal-gold-loan-portal",
+  "version": "1.0.0",
+  "description": "Production-ready, highly attractive, web-based Gold Loan Application & Data Collection System for Yellow Metal",
+  "scripts": {
+    "server:install": "npm install --prefix server",
+    "client:install": "npm install --prefix client",
+    "install:all": "npm run server:install && npm run client:install",
+    "server:start": "npm start --prefix server",
+    "server:dev": "npm run dev --prefix server",
+    "client:dev": "npm run dev --prefix client",
+    "client:build": "npm run build --prefix client",
+    "test": "npm test --prefix server",
+    "test:integration": "node server/tests/api_integration.test.js",
+    "start": "npm start --prefix server"
+  },
+  "keywords": [
+    "fintech",
+    "gold-loan",
+    "ltv",
+    "yellow-metal",
+    "mern",
+    "react",
+    "express",
+    "tailwind"
+  ],
+  "author": "Antigravity Engineering",
+  "license": "ISC"
+}
