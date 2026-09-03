@@ -4,12 +4,7 @@
 
 ---
 
-## Architecture & Diagrams
-
-### 1. Backend Server Setup & Architectural Blueprint
-![Backend Architecture](https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS5dtn_QY30e5sR_DWdls_W2iHG9TS1OKLVJ9fc5iA5CrGawJClDH6oCDotjBy94I-8-K43rYi-0Q0xxls)
-
-### 2. Financial Math & Collateral Valuation Flow
+### 1. Financial Math & Collateral Valuation Flow
 ![Financial Valuation Flow]()
 
 ```
