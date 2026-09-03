@@ -2,6 +2,17 @@
 
 **Yellow Metal** is a modern, high-converting, dark/light theme-supported web-based Gold Loan Application & Data Collection System built using the MERN stack (MongoDB, Express, React, Node.js) and Tailwind CSS.
 
+Backend API Reference
+
+| **Endpoint**                     | **Description**                                                                                                                                                                                                                                                                                                    |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `GET /api/v1/loan-schemes`       | Returns available Yellow Metal loan schemes, including interest rates, maximum LTV (capped at 75%), tenure options, and scheme types (*Bullet Repayment Plan*, *Monthly EMI Plan*).                                                                                                                                |
+| `GET /api/v1/gold-rate`          | Returns live market gold rates (24K, 22K, 18K) fetched via API service with a 10-minute in-memory caching mechanism.                                                                                                                                                                                               |
+| `POST /api/v1/leads/submit`      | Submits a new gold loan application. Validates net weight against gross weight, Indian 10-digit mobile number format (`/^[6-9]\d{9}$/`), and 75% LTV cap. Rejects duplicate submissions from the same mobile number within 7 days (`409 Conflict`). Saves applied gold rate and generates a unique application ID. |
+| `GET /api/v1/leads`              | Returns all submitted leads sorted by creation date descending, featuring masked customer phone numbers (e.g., `9876XXXX10`) for admin privacy.                                                                                                                                                                    |
+| `PATCH /api/v1/leads/:id/status` | Updates an application lead's status (`SUBMITTED`, `VERIFIED`, `VALUATION_SCHEDULED`, `DISBURSED`, `REJECTED`) and internal partner notes.                                                                                                                                                                         |
+| `GET /api/v1/leads/export/csv`   | Exports lead data to CSV format for audit, accounting, and offline partner analysis.                                                                                                                                                                                                                               |
+
 ---
 
 ### 1. Financial Math & Collateral Valuation Flow
